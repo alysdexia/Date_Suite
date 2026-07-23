@@ -1,0 +1,13 @@
+const$=new Date();console.log(`${$.getFullYear()} ${$.getMonth()+1} ${$.getDate()} ${$.getDay()+1} ${$.getHours()}.${$.getMinutes()}.${$.getSeconds()}
+
+dayjs().format('DD/MM/YYYY')
+
+let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');let[h,n,s]=t.split(':');console.log(`${y} ${M} ${d} ${D} ${h}.${n}.${s} Z${O.slice(3)}:${L[1]}${S[0]}${T[0]}`)
+
+let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');let[h,n,s]=t.split(':');console.log(`${[y,M,d,D,h+'.'+n+'.'+s,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')}`)
+
+let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');console.log(`${[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')}`)
+
+javascript:(()=>{let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');navigator.clipboard.writeText(`${[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')}`)})()
+javascript:(()=>{onpaste=e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' '))}})()
+javascript:(()=>{onpaste=e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,' <s style=display:none>~~~~</s>~~~ '+[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')+'<!--GitHub/alysdexia/Date_Suite#Sign_Preempt-->')}})()
