@@ -27,7 +27,7 @@ Make a bookmark/favorite with this code as the address:
 ##### Date Preempt
 If you had pasted at the Banda Aceh earthquake that shortend Earth's day by 7 μs: ```2004 Dec 26 Sun 07:58:53 Z+700:WIT```.
 ##### Sign Preempt
-Pasting on a talk page, or wherever: ```<s style=display:none>~~~~</s>~~~ 2004 Dec 26 Sun 07:58:53 Z+700:WIT<!--GitHub/alysdexia/Date_Suite#Sign_Preempt-->```
+Pasting on a talk page, or wherever: ``` <s style=display:none>~~~~</s>~~~ 2004 Dec 26 Sun 07:58:53 Z+700:WIT<!--GitHub/alysdexia/Date_Suite#Sign_Preempt-->```
 
 ### Development
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
