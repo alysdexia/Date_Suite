@@ -9,10 +9,10 @@ These applets rearrange Date() (now) so that the timestamp units shorten.
 * Date Preempt substitutes your clipboard with your paste timestamp.
   * Preempt is a pun of print, both verbs.
     * Preempt is not a valid verb in languages descended from this root, as this culture takes deverbal adjectives as verbs.
-  * Regular copying is broken until the window is reloaded.
+  * Regular copypasting in-window (viewport, not decoration) is broken until the window is reloaded, but the clipboard may be used in the address bar.
 * Sign Preempt substitutes your MediaWiki ~~~~ signature with a nondisplayed ~~~~ signature, your ~~~ signature, and your paste timestamp.
   * The standard signature timestamp stays in the source to comply with bot duties.
-  * Regular copying is broken until the window is reloaded.
+  * Regular copypasting in-window (viewport, not decoration) is broken until the window is reloaded, but the clipboard may be used in the address bar.
  
 ### Installation
 Make a bookmark/favorite with this code as the address:
