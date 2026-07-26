@@ -10,4 +10,4 @@ let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');console.log(`${[y,M,d,D,t,'Z
 
 javascript:(()=>{let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');navigator.clipboard.writeText(`${[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')}`)})()
 javascript:(()=>{onpaste=e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' '))}})()
-javascript:(()=>{onpaste=e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,' <s style=display:none>~~~~</s>~~~ '+[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')+'<!--GitHub/alysdexia/Date_Suite#Sign_Preempt-->')}})()
+javascript:(()=>{onpaste=e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,' <s style=display:none>~~~~</s>~~~ '+[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')+'<!--GitHub/alysdexia/Date_Suite#sign-preempt-->')}})()
