@@ -21,13 +21,13 @@ Make a bookmark/favorite with this code as the address:
 ##### Date Preempt
 ```javascript:(()=>{onpaste=e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' '))}})()```
 ##### Sign Preempt
-```javascript:(()=>{onpaste=e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,' <s style=display:none>~~~~</s>~~~ '+[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')+'<!--GitHub/alysdexia/Date_Suite#Sign_Preempt-->')}})()```
+```javascript:(()=>{onpaste=e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,' <s style=display:none>~~~~</s>~~~ '+[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')+'<!--GitHub/alysdexia/Date_Suite#Sign-Preempt-->')}})()```
 
 ### Preview
 ##### Date Preempt
 If you had pasted at the Banda Aceh earthquake that shortend Earth's day by 7 μs: ```2004 Dec 26 Sun 07:58:53 Z+700:WIT```.
 ##### Sign Preempt
-Pasting on a talk page, or wherever: ``` <s style=display:none>~~~~</s>~~~ 2004 Dec 26 Sun 07:58:53 Z+700:WIT<!--GitHub/alysdexia/Date_Suite#Sign_Preempt-->```
+Pasting on a talk page, or wherever: ``` <s style=display:none>~~~~</s>~~~ 2004 Dec 26 Sun 07:58:53 Z+700:WIT<!--GitHub/alysdexia/Date_Suite#sign-preempt-->```
 
 ### Development
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
