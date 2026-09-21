@@ -9,19 +9,19 @@ These applets rearrange Date() (now) so that the timestamp units shorten.
 * Date Preempt substitutes your clipboard with your paste timestamp.
   * Preempt is a pun of print, both verbs.
     * Preempt is not a valid verb in languages descended from this root, as this culture takes deverbal adjectives as verbs.
-  * Regular copypasting in-window (viewport, not decoration) is broken until the window is reloaded, but the clipboard may be used in the address bar.
+  * Regular copypasting in-window (viewport, not decoration) returns after the “paste”, but the clipboard may be used in the address bar (in the window decoration).
 * Sign Preempt substitutes your MediaWiki ~~~~ signature with a nondisplayed ~~~~ signature, your ~~~ signature, and your paste timestamp.
   * The standard signature timestamp stays in the source to comply with bot duties.
-  * Regular copypasting in-window (viewport, not decoration) is broken until the window is reloaded, but the clipboard may be used in the address bar.
+  * Regular copypasting in-window (viewport, not decoration) returns after the “paste”, but the clipboard may be used in the address bar (in the window decoration).
  
 ### Installation
 Make a bookmark/favorite with this code as the address:
 ##### Date Sort
 ```javascript:(()=>{let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');navigator.clipboard.writeText(`${[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')}`)})()```
 ##### Date Preempt
-```javascript:(()=>{onpaste=e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' '))}})()```
+```javascript:(()=>{self.addEventListener('paste',e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' '))},{capture:true,once:true})})()```
 ##### Sign Preempt
-```javascript:(()=>{self.addEventListener('paste',e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,'​ <s style=display:none>~~~~</s>~~~ '+[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')+'<!--GitHub/alysdexia/Date_Suite#Sign_Preempt-->')},true)})()```
+```javascript:(()=>{self.addEventListener('paste',e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,'​ <s style=display:none>~~~~</s>~~~ '+[y,M,d,D,t,'Z'+O.slice(3)+':'+L+S+T].join(' ')+'<!--GitHub/alysdexia/Date_Suite#Sign_Preempt-->')},{capture:true,once:true})})()```
 
 ### Preview
 ##### Date Preempt
@@ -37,6 +37,7 @@ Pasting on a talk page, or wherever: ```​ <s style=display:none>~~~~</s>~~~ 20
 * I only involved Google AI when needan the paste to use this code instead of whatever was on the clipboard.  This was mostly a bad time so I'll leave the log out.  Whenever Google AI has to speculate about new unwritten applications, the code is wrong more than 90% of the time.  When trying to restore the clipboard after a overridden paste, that gave me 23 snippets in a row that didn't work, often with repeat fake means.  If you know of a way that preventDefault() can be turned off, please tell me so that we don't need to reload the window after pasting.  When seeing whether a paste without preventDefault() could be redirected to void or null so that onpaste could write the timestamp on the next paste, that Google AI gave me 14 snippets in a row to paste to a real hidden layered div or something that didn't work.
   * Sign Preempt replaced and fixed with ZWS to work on bare line.
   * Sign Preempt fixed by Google AI to stop English Wikipedia’s editor’s new paste handler that exists for no reason to stop my preventDefault along with the wikitext color coding update.
+    * The addEventListener made Google AI recommend a parameter that ends the script after pasting and that actually works!
 
 ### Other must-use applets
 * [Type Sample](https://www.typewolf.com/type-sample), [Wayback](https://web.archive.org/web/20201203064635/https://www.typesample.com/) on Typewolf, names and previews fonts
