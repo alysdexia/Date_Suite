@@ -21,7 +21,7 @@ Make a bookmark/favorite with this code as the address:
 ##### Date Preempt
 ```javascript:(()=>{self.addEventListener('paste',e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' '))},{capture:true,once:true})})()```
 ##### Sign Preempt
-```javascript:(()=>{self.addEventListener('paste',e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,'​ <s style=display:none>~~~~</s>~~~ '+[y,M,d,D,t,'Z'+O.slice(3)+':'+L+S+T].join(' ')+'<!--GitHub/alysdexia/Date_Suite#Sign_Preempt-->')},{capture:true,once:true})})()```
+```javascript:(()=>{self.addEventListener('paste',e=>{e.preventDefault();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,'​ <s style=display:none>~~~~</s>~~~ '+[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')+'<!--GitHub/alysdexia/Date_Suite#Sign_Preempt-->')},{capture:true,once:true})})()```
 
 ### Preview
 ##### Date Preempt
