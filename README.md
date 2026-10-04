@@ -6,28 +6,26 @@ These applets rearrange Date() (now) so that the timestamp units shorten.
   * The short time zone is made from the first three initials of the OS's civil time zone to be compact.  In four-word time zones this leaves out T for Time.
     * Thus time zones with the same offset and first three initials aren't unique in country-crowded longitudes.  See the Wikipedia list of what initialisms may stand for: [List of time zone abbreviations](https://en.wikipedia.org/wiki/List_of_time_zone_abbreviations).
 * Date Sort puts your run timestamp on your clipboard.
-* Date Preempt substitutes your clipboard with your paste timestamp.
+* Date Preempt inserts the timestamp at the cursor.
   * Preempt is a pun of print, both verbs.
     * Preempt is not a valid verb in languages descended from this root, as this culture takes deverbal adjectives as verbs.
-  * Regular copypasting in-window (viewport, not decoration) returns after the “paste”, but the clipboard may be used in the address bar (in the window decoration).
-* Sign Preempt substitutes your MediaWiki ~~~~ signature with a nondisplayed ~~~~ signature, your ~~~ signature, and your paste timestamp.
+* Sign Preempt substitutes your MediaWiki ~~~~ signature with a nondisplayed ~~~~ signature, your ~~~ signature, and the timestamp.
   * The standard signature timestamp stays in the source to comply with bot duties.
-  * Regular copypasting in-window (viewport, not decoration) returns after the “paste”, but the clipboard may be used in the address bar (in the window decoration).
  
 ### Installation
 Make a bookmark/favorite with this code as the address:
 ##### Date Sort
 ```javascript:(()=>{let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');navigator.clipboard.writeText(`${[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')}`)})()```
 ##### Date Preempt
-```javascript:(()=>{self.addEventListener('paste',e=>{e.preventDefault();e.stopImmediatePropagation();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' '))},{capture:true,once:true})})()```
+```javascript:(()=>{let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' '))})()```
 ##### Sign Preempt
-```javascript:(()=>{self.addEventListener('paste',e=>{e.preventDefault();e.stopImmediatePropagation();let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,'​ <s style=display:none>~~~~</s>~~~ '+[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')+'<!--GitHub/alysdexia/Date_Suite#Sign_Preempt-->')},{capture:true,once:true})})()```
+```javascript:(()=>{let[D,M,d,y,t,O,L,S,T]=Date().toString().split(' ');document.execCommand('insertText',true,'​ <s style=display:none>~~~~</s>~~~ '+[y,M,d,D,t,'Z'+O.slice(3)+':'+L[1]+S[0]+T[0]].join(' ')+'<!--GitHub/alysdexia/Date_Suite#Sign_Preempt-->')})()```
 
 ### Preview
 ##### Date Preempt
-If you had pasted at the Banda Aceh earthquake that shortend Earth's day by 7 μs: ```2004 Dec 26 Sun 07:58:53 Z+700:WIT```.
+If you had run at the Banda Aceh earthquake that shortend Earth's day by 7 μs: ```2004 Dec 26 Sun 07:58:53 Z+700:WIT```.
 ##### Sign Preempt
-Pasting on a talk page, or wherever: ```​ <s style=display:none>~~~~</s>~~~ 2004 Dec 26 Sun 07:58:53 Z+700:WIT<!--GitHub/alysdexia/Date_Suite#sign-preempt-->```
+Running on a talk page, or wherever: ```​ <s style=display:none>~~~~</s>~~~ 2004 Dec 26 Sun 07:58:53 Z+700:WIT<!--GitHub/alysdexia/Date_Suite#sign-preempt-->```
 
 ### Development
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
@@ -39,6 +37,7 @@ Pasting on a talk page, or wherever: ```​ <s style=display:none>~~~~</s>~~~ 20
   * Date and Sign Preempts fixed by Google AI to stop English Wikipedia’s editor’s new paste handler that exists for no reason to stop my preventDefault along with the wikitext color coding update.
     * The addEventListener made Google AI recommend a parameter that ends the script after pasting and that actually works!
   * Date and Sign Preempts fixed by Google AI to stop Fandom’s editor’s paste handler.
+* I got tired of the extra 2–3 taps or long tap then tap on touchscreen needed to use the paste menu on Date and Sign Preempts that I deleted the paste intercepting altogether!  The only reason I kept that was so that the trip from the paste menu to the post button kept a close time to the second.  However the trip from the bookmark to the post button shouldn’t be that long with two hands or fingers.  The pointer trip suffers however.  Paste intercepting is still in the stages history should there be a need.
 
 ### Other must-use applets
 * [Type Sample](https://www.typewolf.com/type-sample), [Wayback](https://web.archive.org/web/20201203064635/https://www.typesample.com/) on Typewolf, names and previews fonts
