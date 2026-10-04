@@ -9,7 +9,7 @@ These applets rearrange Date() (now) so that the timestamp units shorten.
 * Date Preempt inserts the timestamp at the cursor.
   * Preempt is a pun of print, both verbs.
     * Preempt is not a valid verb in languages descended from this root, as this culture takes deverbal adjectives as verbs.
-* Sign Preempt substitutes your MediaWiki ~~~~ signature with a nondisplayed ~~~~ signature, your ~~~ signature, and the timestamp.
+* Sign Preempt inserts a zero-width space, a space, your MediaWiki ~~~~ signature substituted with a nondisplayed ~~~~ signature, your ~~~ signature, and the timestamp at the cursor.
   * The standard signature timestamp stays in the source to comply with bot duties.
  
 ### Installation
